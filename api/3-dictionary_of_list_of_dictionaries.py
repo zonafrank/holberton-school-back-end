@@ -3,9 +3,8 @@
     his/her TODO list progress
 """
 
-import sys
-import requests
 import json
+import requests
 
 BASE_URL = "https://jsonplaceholder.typicode.com/"
 
