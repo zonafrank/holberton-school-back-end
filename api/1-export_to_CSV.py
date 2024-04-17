@@ -21,6 +21,7 @@ def get_user_todos(user_id):
     return {"user": user, "todos": todos}
 
 def write_to_file(obj):
+    """Writer user todos data to csv file"""
     user = obj["user"]
     todos = obj["todos"]
     
