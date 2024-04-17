@@ -20,15 +20,18 @@ def get_user_todos(user_id):
     todos = res.json()
     return {"user": user, "todos": todos}
 
+
 def write_to_file(obj):
     """Writer user todos data to csv file"""
     user = obj["user"]
     todos = obj["todos"]
-    
+
     with open(f"{user['id']}.csv", "w", newline="") as file:
         writer = csv.writer(file)
         for todo in todos:
-            writer.writerow([user["id"], user["name"], todo["completed"], todo["title"]])
+            writer.writerow([user["id"],
+                             user["name"], todo["completed"],
+                             todo["title"]])
 
 
 if __name__ == "__main__":

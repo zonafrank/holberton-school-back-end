@@ -20,17 +20,18 @@ def get_user_todos(user_id):
     todos = res.json()
     return {"user": user, "todos": todos}
 
+
 def export_to_json(obj):
     """Writer user todos data to json file"""
     user = obj["user"]
     todos = obj["todos"]
-    
+
     result_obj = {}
     result_obj[user["id"]] = [
-        {"task": item["title"], 
+        {"task": item["title"],
          "completed": item["completed"],
          "username": user["username"]} for item in todos]
-    
+
     filename = f"{user['id']}.json"
     with open(filename, "w", newline="") as out_file:
         json.dump(result_obj, out_file)
