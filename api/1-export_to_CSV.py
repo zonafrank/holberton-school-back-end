@@ -26,12 +26,12 @@ def write_to_file(obj):
     user = obj["user"]
     todos = obj["todos"]
 
-    with open(f"{user['id']}.csv", "w", newline="") as file:
-        writer = csv.writer(file)
+    with open(f"{user['id']}.csv", "w", encoding="utf-8") as file:
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for todo in todos:
-            writer.writerow([user["id"],
-                             user["name"], todo["completed"],
-                             todo["title"]])
+            writer.writerow([f'{user["id"]}',
+                             f'{user["name"]}', f'{todo["completed"]}',
+                             f'{todo["title"]}'])
 
 
 if __name__ == "__main__":
