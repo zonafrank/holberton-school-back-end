@@ -19,7 +19,7 @@ def get_user_todos(user_id):
     todos = res.json()
     completed_todos = [todo for todo in todos if todo["completed"]]
     stats = f"{len(completed_todos)}/{len(todos)}"
-    print(f"Employee {user['name']} is done with tasks ({stats}):")
+    print(f"Employee {user['name']} is done with tasks({stats}):")
     for todo in completed_todos:
         print(f"\t {todo['title']}")
 
