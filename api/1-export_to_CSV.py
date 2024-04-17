@@ -30,7 +30,7 @@ def write_to_file(obj):
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for todo in todos:
             writer.writerow([f'{user["id"]}',
-                             f'{user["name"]}', f'{todo["completed"]}',
+                             f'{user["username"]}', f'{todo["completed"]}',
                              f'{todo["title"]}'])
 
 
